@@ -1,0 +1,19 @@
+{
+  "name": "academia_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/app/index.js",
+    "dev": ""
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.13"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
