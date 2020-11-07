@@ -6,6 +6,6 @@ router.get('/', (req, res, next) => {
     res.status(200).send({ status: "OK" });
 });
 
-router.route('/auth', authRoute)
+router.use('/auth', authRoute);
 
 module.exports = router;
