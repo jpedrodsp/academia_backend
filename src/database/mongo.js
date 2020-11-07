@@ -12,8 +12,8 @@ mongoose.connect(mongo_server_url, mongo_connection_params);
 // Define Database object
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
+db.once('open', function () {
     console.log(`Opened connection to MongoDB server: ${db.host}`);
 });
 
-module.exports = db;
+module.exports = du
