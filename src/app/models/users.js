@@ -2,12 +2,17 @@ const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema(
     {
-        register_id: String,
-        name: String,
-        register_date: Date,
-        hashed_password: String,
+        email: { type: String, required: true, lowercase: true, unique: true },
+        password: { type: String, required: true, select: false },
+        name: { type: String, required: true },
+        register_date: { type: Date, default: Date.now },
     }
 );
-const User = mongoose.model('user', UserSchema);
+UserSchema.pre('save', async function (next) {
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+    next();
+});
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
