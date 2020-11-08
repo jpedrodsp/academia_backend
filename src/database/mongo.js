@@ -16,4 +16,4 @@ db.once('open', function () {
     console.log(`Opened connection to MongoDB server: ${db.host}`);
 });
 
-module.exports = du
+module.exports = db;
